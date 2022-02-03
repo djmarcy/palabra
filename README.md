@@ -29,4 +29,6 @@ THEN, The words I have previously learned will display on the page
 - Pronunciation button
 - PIZAZZ
 - A picture of a chupacabra
+- Thesaurus
+- Test your knowledge 
 
