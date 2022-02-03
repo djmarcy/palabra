@@ -31,4 +31,3 @@ THEN, The words I have previously learned will display on the page
 - A picture of a chupacabra
 - Thesaurus
 - Test your knowledge 
-
