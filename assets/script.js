@@ -15,11 +15,25 @@
 
 // Init Function
 function initFunction() {
-    console.log("hello")
-}
 
 
-// TODO: Take the user input and fetch random word form random word API
+// TODO: Fetch random word form random word API
+var key = "56e1ec2b89msh75f5a1bd9fbcbb6p150a7bjsnb6e951a5a987"
+
+fetch("https://wordsapiv1.p.rapidapi.com/words/?random=true", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "wordsapiv1.p.rapidapi.com",
+		"x-rapidapi-key": "56e1ec2b89msh75f5a1bd9fbcbb6p150a7bjsnb6e951a5a987"
+	}
+})
+.then(function(resp) { return resp.json() }) // Convert data to json
+.then(function(data) {
+  console.log(data)
+})
+
+} // End of init function
+
 
 
 // TODO: Display english word to the page
@@ -41,7 +55,7 @@ function initFunction() {
 
 
 // Call init function
-initFunction ();
+initFunction();
 
 
 // Keyboard events
