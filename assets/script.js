@@ -11,7 +11,7 @@
 
 
 // TODO: Assign other variables
-
+var targetLanguage = "es"
 
 // Init Function
 function initFunction() {
@@ -30,6 +30,28 @@ fetch("https://wordsapiv1.p.rapidapi.com/words/?random=true", {
   console.log(data)
 }) // End of thens
 } // End of init function
+
+// Google Translate Fetch
+// fetch("https://google-translate1.p.rapidapi.com/language/translate/v2", {
+// 	"method": "POST",
+// 	"headers": {
+// 		"content-type": "application/x-www-form-urlencoded",
+// 		"accept-encoding": "application/gzip",
+// 		"x-rapidapi-host": "google-translate1.p.rapidapi.com",
+// 		"x-rapidapi-key": "{key}"
+// 	},
+// 	"body": {
+// 		"q": "word",
+// 		"target": targetLanguage,
+// 		"source": "en"
+// 	}
+// })
+// .then(response => {
+// 	console.log(response);
+// })
+// .catch(err => {
+// 	console.error(err);
+// });
 
 // TODO: Fetch the definition
 
