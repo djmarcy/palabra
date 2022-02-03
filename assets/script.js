@@ -7,15 +7,14 @@
 // THEN, The words I have previously learned will display on the page
 
 
-// Assign variables from the DOM
+// TODO: Assign variables from the DOM
 
 
-// Assign other variables
+// TODO: Assign other variables
 
 
 // Init Function
 function initFunction() {
-
 
 // TODO: Fetch random word form random word API
 var key = "56e1ec2b89msh75f5a1bd9fbcbb6p150a7bjsnb6e951a5a987"
@@ -26,26 +25,23 @@ fetch("https://wordsapiv1.p.rapidapi.com/words/?random=true", {
 		"x-rapidapi-host": "wordsapiv1.p.rapidapi.com",
 		"x-rapidapi-key": "56e1ec2b89msh75f5a1bd9fbcbb6p150a7bjsnb6e951a5a987"
 	}
-})
+}) // End of fetch
 .then(function(resp) { return resp.json() }) // Convert data to json
 .then(function(data) {
   console.log(data)
-})
-
+}) // End of thens
 } // End of init function
 
+// TODO: Fetch the definition
 
 
-// TODO: Display english word to the page
+// TODO: Display english word and definiton to the page
 
 
 // TODO: Translate word using translate api
 
 
 // TODO: Display translated word
-
-
-// TODO: Display translated word defintion
 
 
 // TODO: Save english and translated word to local storage
@@ -58,7 +54,7 @@ fetch("https://wordsapiv1.p.rapidapi.com/words/?random=true", {
 initFunction();
 
 
-// Keyboard events
+// TODO: Keyboard events
 
 
-// Event listeners
+// TODO: Event listeners
