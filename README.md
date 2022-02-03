@@ -18,4 +18,3 @@ THEN,
 - Display words on page
 - Data saved to storage 
 - Get data from storage to display on page 
-
