@@ -41,7 +41,7 @@ function testing() {
   fetch("https://nlp-translation.p.rapidapi.com/v1/translate", {
     "method": "POST",
     "headers": {
-      "content-type": "application/x-www-form-urlencoded",
+      "Content-Type": "application/json",
       "x-rapidapi-host": "nlp-translation.p.rapidapi.com",
       "x-rapidapi-key": "56e1ec2b89msh75f5a1bd9fbcbb6p150a7bjsnb6e951a5a987"
     },
@@ -52,7 +52,10 @@ function testing() {
     }
   })
   .then(response => {
-    console.log(response);
+    response.json();
+  })
+  .then(data => {
+    console.log(data);
   })
   .catch(err => {
     console.error(err);
