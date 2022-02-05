@@ -33,25 +33,21 @@ fetch("https://wordsapiv1.p.rapidapi.com/words/?random=true", {
 
 // Google Translate Fetch
 function testing() {
-  fetch("https://lecto-translation.p.rapidapi.com/v1/translate/text", {
+  fetch("https://cors-anywhere.herokuapp.com/https://nlp-translation.p.rapidapi.com/v1/translate", {
     "method": "POST",
     "headers": {
-      "content-type": "application/json",
-      "x-rapidapi-host": "lecto-translation.p.rapidapi.com",
+      "Origin": "https://nlp-translation.p.rapidapi.com/v1/translate",
+      "content-type": "application/x-www-form-urlencoded",
+      "x-rapidapi-host": "nlp-translation.p.rapidapi.com",
       "x-rapidapi-key": "56e1ec2b89msh75f5a1bd9fbcbb6p150a7bjsnb6e951a5a987"
     },
     "body": {
-      "texts": [
-        "Donde"
-      ],
-      "to": [
-        "en"
-      ],
+      "text": "donde",
+      "to": "en",
       "from": "es"
     }
   })
   .then(response => {
-    response.json();
     console.log(response);
   })
   .catch(err => {
