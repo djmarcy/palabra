@@ -20,10 +20,16 @@
 <body>
     <header>
         <h1 class="text-8xl">Palabra</h1>
-        <h2 class="text-2xl" id="fun-way">A fun way to learn one word a day!</h2>
+        <h2 class="text-2xl" id="fun-way">✨ An easy way to learn one word a day ✨</h2>
     </header>
 
     <section class="max-w-7xl gap-2 mx-auto flex flex-row my-4 items-center">
+        <article class="w-full">
+            <button id="word-of-day">Word of the Day:</button>
+            <h3 class="text-4xl" id="chosen-word"></h3>
+            <p id="definition">Definition</p>
+        </article>
+       
         <article class="w-full" id="input-dropwdown">
             <select name="language-select" id="lang-select">
                 <option value="dutch" class="dropdown">Similar Words</option>
@@ -32,16 +38,9 @@
             <br />
             <button id="select-button">Go!</button>
         </article>
-
-        <article class="w-full">
-            <h2 class="text-6xl">Word of the Day:</h2>
-            <h3 class="text-4xl" id="chosen-word"></h3>
-            <p id="definition">Definition</p>
-        </article>
     </section>
 
     <section class="my-4 word-container">
-        <div id="words-this-month"><h2>Past words:</h2></div>
         <div class="column">
             <div class="row saved-word">word</div>
             <div class="row saved-word">word</div>
