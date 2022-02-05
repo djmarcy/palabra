@@ -52,6 +52,8 @@ footer {
   color: var(--teal);
   text-align: center;
   padding: 30px;
+  font-size: 20px;
+  font-weight: bold;
   width: 100%;
 }
 
@@ -63,14 +65,21 @@ button {
 }
 
 #lang-select {
-  font-size: 40px;
+  font-size: 30px;
+  background-color: #f3dfa2;
 }
 
 #select-button {
   font-size: 30px;
-  color: var(--teal);
+  color: var(--light);
+  background-color: var(--teal);
   font-family: "Lobster", cursive;
-  font-size: 40px;
+  padding: 8px;
+  font-size: 30px;
+}
+
+#chosen-word {
+    color: var(--dark);
 }
 
 .my-4 {
@@ -82,7 +91,7 @@ button {
 }
 .word-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   text-align: center;
 }
@@ -91,7 +100,19 @@ button {
   margin: 20px;
   width: 15%;
 }
-
 .spacer {
   flex-grow: 1;
+}
+
+#fun-way {
+    color: var(--teal);
+}
+
+#word-of-day {
+    font-size: 30px;
+    color: var(--light);
+    background-color: var(--teal);
+    font-family: "Lobster", cursive;
+    padding: 8px;
+    font-size: 30px;
 }

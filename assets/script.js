@@ -8,10 +8,11 @@
 
 
 // TODO: Assign variables from the DOM
-
+var chosenWord = document.getElementById("chosen-word")
+var selectButton = document.getElementById("word-of-day")
 
 // TODO: Assign other variables
-var targetLanguage = "es"
+var storedWords = []
 
 // Init Function
 function initFunction() {
@@ -28,31 +29,38 @@ fetch("https://wordsapiv1.p.rapidapi.com/words/?random=true", {
 	return response.json() }) // Convert data to json
 .then(function(data) {
   console.log(data)
+
+  // Sets the word of the day to the DOM
+  var randomWord = data.word
+  chosenWord.textContent = (randomWord)
+
+  // Sets word of the day to local storage
+  storedWords.push(randomWord)
+  localStorage.setItem("words", storedWords)
+
 }) // End of thens
 } // End of init function
 
 // Google Translate Fetch
 function testing() {
-  fetch("https://lecto-translation.p.rapidapi.com/v1/translate/text", {
+  fetch("https://nlp-translation.p.rapidapi.com/v1/translate", {
     "method": "POST",
     "headers": {
-      "content-type": "application/json",
-      "x-rapidapi-host": "lecto-translation.p.rapidapi.com",
+      "Content-Type": "application/json",
+      "x-rapidapi-host": "nlp-translation.p.rapidapi.com",
       "x-rapidapi-key": "56e1ec2b89msh75f5a1bd9fbcbb6p150a7bjsnb6e951a5a987"
     },
     "body": {
-      "texts": [
-        "Donde"
-      ],
-      "to": [
-        "en"
-      ],
+      "text": "donde",
+      "to": "en",
       "from": "es"
     }
   })
   .then(response => {
     response.json();
-    console.log(response);
+  })
+  .then(data => {
+    console.log(data);
   })
   .catch(err => {
     console.error(err);
@@ -78,11 +86,12 @@ function testing() {
 
 
 // Call init function
-initFunction();
 testing();
+
 
 
 // TODO: Keyboard events
 
 
 // TODO: Event listeners
+selectButton.addEventListener("click", initFunction);
