@@ -32,6 +32,7 @@ fetch("https://wordsapiv1.p.rapidapi.com/words/?random=true", {
 
   var randomWord = data.word
   chosenWord.textContent = (randomWord)
+
 }) // End of thens
 } // End of init function
 
