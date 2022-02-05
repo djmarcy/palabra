@@ -32,26 +32,31 @@ fetch("https://wordsapiv1.p.rapidapi.com/words/?random=true", {
 } // End of init function
 
 // Google Translate Fetch
-// fetch("https://google-translate1.p.rapidapi.com/language/translate/v2", {
-// 	"method": "POST",
-// 	"headers": {
-// 		"content-type": "application/x-www-form-urlencoded",
-// 		"accept-encoding": "application/gzip",
-// 		"x-rapidapi-host": "google-translate1.p.rapidapi.com",
-// 		"x-rapidapi-key": "{key}"
-// 	},
-// 	"body": {
-// 		"q": "word",
-// 		"target": targetLanguage,
-// 		"source": "en"
-// 	}
-// })
-// .then(response => {
-// 	console.log(response);
-// })
-// .catch(err => {
-// 	console.error(err);
-// });
+function testing() {
+  fetch("https://lecto-translation.p.rapidapi.com/v1/translate/text", {
+    "method": "POST",
+    "headers": {
+      "content-type": "application/json",
+      "x-rapidapi-host": "lecto-translation.p.rapidapi.com",
+      "x-rapidapi-key": "56e1ec2b89msh75f5a1bd9fbcbb6p150a7bjsnb6e951a5a987"
+    },
+    "body": {
+      "texts": [
+        "Donde"
+      ],
+      "to": [
+        "en"
+      ],
+      "from": "es"
+    }
+  })
+  .then(response => {
+    console.log(response);
+  })
+  .catch(err => {
+    console.error(err);
+  });
+}
 
 // TODO: Fetch the definition
 
@@ -73,6 +78,7 @@ fetch("https://wordsapiv1.p.rapidapi.com/words/?random=true", {
 
 // Call init function
 initFunction();
+testing();
 
 
 // TODO: Keyboard events
