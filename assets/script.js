@@ -9,7 +9,7 @@
 
 // TODO: Assign variables from the DOM
 var chosenWord = document.getElementById("chosen-word")
-var selectButton = document.getElementById("select-button")
+var selectButton = document.getElementById("word-of-day")
 
 // TODO: Assign other variables
 
@@ -81,11 +81,11 @@ function testing() {
 
 // Call init function
 testing();
-initFunction();
+
 
 
 // TODO: Keyboard events
 
 
 // TODO: Event listeners
-// selectButton.addEventListener("click");
+selectButton.addEventListener("click", initFunction);
