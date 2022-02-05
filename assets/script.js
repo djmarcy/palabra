@@ -37,24 +37,24 @@ fetch("https://wordsapiv1.p.rapidapi.com/words/?random=true", {
 
   // Sets word of the day to local storage
   storedWords.push(randomWord)
+  testing(randomWord)
   localStorage.setItem("words", JSON.stringify(storedWords))
 
 }) // End of thens
 getWords();
 } // End of init function
 
-// Google Translate Fetch
-function testing() {
+function testing(rword) {
   var word = "home";
   var key = "ca17d58e-66c7-41a6-a5c6-589cfe4e0342"
   var requestOptions = {
     method: 'GET',
     redirect: 'follow'
   }
-    fetch("https://www.dictionaryapi.com/api/v3/references/thesaurus/json/" + word + "?key=" + key, requestOptions)
+    fetch("https://www.dictionaryapi.com/api/v3/references/thesaurus/json/" + rword + "?key=" + key, requestOptions)
     .then(response => response.json())
-    .then(result => console.log(result[0].meta.syns))
-    .catch(error => console.log('error', error));
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error)); // CHANGE FORM LOG TO DISPLAY ON PAGE AND OR LOG
 }
 
 // TODO: Fetch the definition
@@ -88,10 +88,6 @@ function getWords () {
 }
 
 
-
-
-// Call init function
-testing();
 
 
 
