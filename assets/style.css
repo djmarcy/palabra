@@ -70,8 +70,13 @@ button {
 }
 
 .word-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: center;
 }
 
 .column {
   margin: 20px;
+  width: 15%;
 }
