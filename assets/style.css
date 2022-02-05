@@ -45,6 +45,9 @@ footer {
   color: var(--teal);
   text-align: center;
   padding: 30px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 button {
