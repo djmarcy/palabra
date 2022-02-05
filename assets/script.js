@@ -8,7 +8,8 @@
 
 
 // TODO: Assign variables from the DOM
-
+var chosenWord = document.getElementById("chosen-word")
+var selectButton = document.getElementById("select-button")
 
 // TODO: Assign other variables
 var targetLanguage = "es"
@@ -28,6 +29,9 @@ fetch("https://wordsapiv1.p.rapidapi.com/words/?random=true", {
 	return response.json() }) // Convert data to json
 .then(function(data) {
   console.log(data)
+
+  var randomWord = data.word
+  chosenWord.textContent = (randomWord)
 }) // End of thens
 } // End of init function
 
@@ -78,7 +82,6 @@ function testing() {
 
 
 // Call init function
-initFunction();
 testing();
 
 
@@ -86,3 +89,4 @@ testing();
 
 
 // TODO: Event listeners
+selectButton.addEventListener("click", initFunction);
