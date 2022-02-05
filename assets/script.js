@@ -51,6 +51,7 @@ function testing() {
     }
   })
   .then(response => {
+    response.json();
     console.log(response);
   })
   .catch(err => {
