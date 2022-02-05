@@ -20,103 +20,105 @@
 <body>
     <header>
         <h1 class="text-8xl">Palabra</h1>
-        <h2 class="text-2xl">A fun way to learn one word a day!</h2>
+        <h2 class="text-2xl" id="fun-way">✨ An easy way to learn one word a day ✨</h2>
+
     </header>
 
     <section class="max-w-7xl gap-2 mx-auto flex flex-row my-4 items-center">
-        <article class="w-full" id="input-dropwdown">
-            <select name="language-select" id="lang-select">
-                <option value="dutch" class="dropdown">Dutch</option>
-                <option value="english" class="dropdown">English</option>
-                <option value="french" class="dropdown">French</option>
-                <option value="german" class="dropdown">German</option>
-                <option value="spanish" class="dropdown">Spanish</option>
-            </select>
-            <br />
-            <button id="select-button">Give me my word!</button>
-        </article>
-
         <article class="w-full">
-            <h2 class="text-6xl">Word of the Day:</h2>
+            <button id="word-of-day">Word of the Day:</button>
             <h3 class="text-4xl" id="chosen-word"></h3>
             <p id="definition">Definition</p>
         </article>
+       
+        <article class="w-full" id="input-dropwdown">
+            <select name="language-select" id="lang-select">
+                <option value="similar-words" class="dropdown">Similar Words</option>
+                <option value="defintion" class="dropdown">Definition</option>
+            </select>
+            <br />
+            <button id="select-button">Go!</button>
+        </article>
     </section>
 
-    <section class="my-4 word-container">
-        <div class="column">
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-        </div>
-        <div class="column">
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-        </div>
-        <div class="column">
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-        </div>
-        <div class="column">
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-        </div>
-        <div class="column">
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-        </div>
-        <div class="column">
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-        </div>
-        <div class="column">
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-        </div>
-        <div class="column">
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-        </div>
-        <div class="column">
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-        </div>
-        <div class="column">
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
-            <div class="row saved-word">word</div>
+    <section class="saved-section">
+        <h2 class="text-center text-2xl">Saved Words</h2>
+
+        <div class="word-container">
+            <div class="column">
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+            </div>
+            <div class="column">
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+            </div>
+            <div class="column">
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+            </div>
+            <div class="column">
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+            </div>
+            <div class="column">
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+            </div>
+            <div class="column">
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+            </div>
+            <div class="column">
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+            </div>
+            <div class="column">
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+            </div>
+            <div class="column">
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+            </div>
+            <div class="column">
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+                <div class="row saved-word">word</div>
+            </div>
         </div>
     </section>
 
-
+    <div class="spacer"></div>
 
     <footer>
         <p>Made by the Elder Millenials</p>
