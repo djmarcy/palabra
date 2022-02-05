@@ -45,28 +45,16 @@ getWords();
 
 // Google Translate Fetch
 function testing() {
-  fetch("https://nlp-translation.p.rapidapi.com/v1/translate", {
-    "method": "POST",
-    "headers": {
-      "Content-Type": "application/json",
-      "x-rapidapi-host": "nlp-translation.p.rapidapi.com",
-      "x-rapidapi-key": "56e1ec2b89msh75f5a1bd9fbcbb6p150a7bjsnb6e951a5a987"
-    },
-    "body": {
-      "text": "donde",
-      "to": "en",
-      "from": "es"
-    }
-  })
-  .then(response => {
-    response.json();
-  })
-  .then(data => {
-    console.log(data);
-  })
-  .catch(err => {
-    console.error(err);
-  });
+  var word = "home";
+  var key = "ca17d58e-66c7-41a6-a5c6-589cfe4e0342"
+  var requestOptions = {
+    method: 'GET',
+    redirect: 'follow'
+  }
+    fetch("https://www.dictionaryapi.com/api/v3/references/thesaurus/json/" + word + "?key=" + key, requestOptions)
+    .then(response => response.json())
+    .then(result => console.log(result[0].meta.syns))
+    .catch(error => console.log('error', error));
 }
 
 // TODO: Fetch the definition
