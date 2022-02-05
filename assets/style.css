@@ -45,6 +45,8 @@ footer {
   color: var(--teal);
   text-align: center;
   padding: 30px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 button {
@@ -55,14 +57,26 @@ button {
 }
 
 #lang-select {
-  font-size: 40px;
+  font-size: 30px;
+  background-color: #f3dfa2;
 }
 
 #select-button {
   font-size: 30px;
-  color: var(--teal);
+  color: var(--light);
+  background-color: var(--teal);
   font-family: "Lobster", cursive;
-  font-size: 40px;
+  padding: 8px;
+  font-size: 30px;
+}
+
+#chosen-word {
+    color: var(--teal);
+}
+
+#words-this-month {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .my-4 {
