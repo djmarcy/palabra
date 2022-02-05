@@ -12,7 +12,6 @@ var chosenWord = document.getElementById("chosen-word")
 var selectButton = document.getElementById("select-button")
 
 // TODO: Assign other variables
-var targetLanguage = "es"
 
 // Init Function
 function initFunction() {
@@ -82,10 +81,11 @@ function testing() {
 
 // Call init function
 testing();
+initFunction();
 
 
 // TODO: Keyboard events
 
 
 // TODO: Event listeners
-selectButton.addEventListener("click", initFunction);
+// selectButton.addEventListener("click");
