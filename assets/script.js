@@ -12,6 +12,7 @@ var chosenWord = document.getElementById("chosen-word")
 var selectButton = document.getElementById("word-of-day")
 
 // TODO: Assign other variables
+var storedWords = []
 
 // Init Function
 function initFunction() {
@@ -29,8 +30,13 @@ fetch("https://wordsapiv1.p.rapidapi.com/words/?random=true", {
 .then(function(data) {
   console.log(data)
 
+  // Sets the word of the day to the DOM
   var randomWord = data.word
   chosenWord.textContent = (randomWord)
+
+  // Sets word of the day to local storage
+  storedWords.push(randomWord)
+  localStorage.setItem("words", storedWords)
 
 }) // End of thens
 } // End of init function
