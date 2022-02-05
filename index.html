@@ -5,114 +5,121 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/style.css">
-    <title>¡ChuPALABRA!</title>
+    <title>PALABRA</title>
 </head>
 <body>
     <header>
-        <h1 class="text-4xl">¡ChuPALABRA!</h1>
-        <h2 class="text-2xl">A Fun Way to Learn A Word A Day!</h2>
+        <h1 class="text-8xl">Palabra</h1>
+        <h2 class="text-2xl">A fun way to learn one word a day!</h2>
     </header>
 
     <section class="max-w-7xl gap-2 mx-auto flex flex-row my-4 items-center">
-        <article class="w-full">
+        <article class="w-full" id="input-dropwdown">
             <select name="language-select" id="lang-select">
-                <option value="dutch">Dutch</option>
-                <option value="english">English</option>
-                <option value="french">French</option>
-                <option value="german">German</option>
-                <option value="spanish">Spanish</option>
+                <option value="dutch" class="dropdown">Dutch</option>
+                <option value="english"class="dropdown">English</option>
+                <option value="french" class="dropdown">French</option>
+                <option value="german" class="dropdown">German</option>
+                <option value="spanish" class="dropdown">Spanish</option>
             </select>
                 <br />
-            <button>Translate Now!</button>
+            <button id="select-button">Give me my word!</button>
         </article>
 
         <article class="w-full">
-            <h2 class="text-2xl">Word of the Day: <span id="today-word"></span></h2>
-            <p id="definition">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid eum unde deleniti minima accusantium dolorem beatae. Sequi ipsa repellat sit corporis dicta officia mollitia nesciunt voluptate error reiciendis facere esse commodi recusandae laboriosam, fugiat nihil inventore dolores eligendi ipsam saepe impedit rem qui molestias? Quas dicta quibusdam ex numquam nisi!</p>
+            <h2 class="text-6xl">Word of the Day:</h2>
+            <h3 class="text-4xl">This is our word (n): pronunciation</h3>
+            <p id="definition">Definition</p>
         </article>
     </section>
 
     <section class="my-4">
         <div class="column">
-            <div class="row"></div>
-            <div class="row"></div>
-            <div class="row"></div>
-            <div class="row"></div>
-            <div class="row"></div>
+            <div class="row saved-word">word</div>
+            <div class="row saved-word">word</div>
+            <div class="row saved-word">word</div>
+            <div class="row saved-word">word</div>
+            <div class="row saved-word">word</div>
         </div>
         <div class="column">
-            <div class="row"></div>
-            <div class="row"></div>
-            <div class="row"></div>
-            <div class="row"></div>
-            <div class="row"></div>
+            <div class="row saved-word">word</div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
         </div>
         <div class="column">
-            <div class="row"></div>
-            <div class="row"></div>
-            <div class="row"></div>
-            <div class="row"></div>
-            <div class="row"></div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
         </div>
         <div class="column">
-            <div class="row"></div>
-            <div class="row"></div>
-            <div class="row"></div>
-            <div class="row"></div>
-            <div class="row"></div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
         </div>
         <div class="column">
-            <div class="row"></div>
-            <div class="row"></div>
-            <div class="row"></div>
-            <div class="row"></div>
-            <div class="row"></div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
         </div>
         <div class="column">
-            <div class="row"></div>
-            <div class="row"></div>
-            <div class="row"></div>
-            <div class="row"></div>
-            <div class="row"></div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
         </div>
         <div class="column">
-            <div class="row"></div>
-            <div class="row"></div>
-            <div class="row"></div>
-            <div class="row"></div>
-            <div class="row"></div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
         </div>
         <div class="column">
-            <div class="row"></div>
-            <div class="row"></div>
-            <div class="row"></div>
-            <div class="row"></div>
-            <div class="row"></div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
         </div>
         <div class="column">
-            <div class="row"></div>
-            <div class="row"></div>
-            <div class="row"></div>
-            <div class="row"></div>
-            <div class="row"></div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
         </div>
         <div class="column">
-            <div class="row"></div>
-            <div class="row"></div>
-            <div class="row"></div>
-            <div class="row"></div>
-            <div class="row"></div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
+            <div class="row saved-word"></div>
         </div>
     </section>
 
 
 
     <footer>
-        <p>made by dylan, jacob, and emma</p>
+        <p>Made by the Elder Millenials</p>
     </footer>
-
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="./assets/script.js"></script>
 </body>
 </html>
