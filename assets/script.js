@@ -10,6 +10,7 @@
 // TODO: Assign variables from the DOM
 var chosenWord = document.getElementById("chosen-word")
 var selectButton = document.getElementById("word-of-day")
+var wordContainer = document.querySelector(".word-container")
 
 // TODO: Assign other variables
 var storedWords = []
@@ -36,10 +37,11 @@ fetch("https://wordsapiv1.p.rapidapi.com/words/?random=true", {
 
   // Sets word of the day to local storage
   storedWords.push(randomWord)
-  localStorage.setItem("words", storedWords)
   testing(randomWord)
+  localStorage.setItem("words", JSON.stringify(storedWords))
 
 }) // End of thens
+getWords();
 } // End of init function
 
 function testing(rword) {
@@ -71,6 +73,21 @@ function testing(rword) {
 
 
 // TODO: Get from local storage and display to the table in the html framework
+function getWords () {
+  var words = localStorage.getItem("words") 
+  words = JSON.parse(words)
+  console.log(words)
+
+
+  for (let i = 0; i < words.length; i++) {
+    var word = words[i];
+    var wordDiv = document.createElement("div")
+    wordDiv.textContent = word
+    wordContainer.appendChild(wordDiv)
+  }
+}
+
+
 
 
 
