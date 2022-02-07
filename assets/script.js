@@ -13,6 +13,7 @@ var selectButton = document.getElementById("select-button");
 var wordContainer = document.querySelector(".word-container");
 var headingForResult = document.getElementById("definition");
 var displayContainer = document.getElementById("displayContainer");
+var similarContainer = document.getElementById("similar-container")
 
 document.getElementById("date").textContent = moment().format('MMMM Do YYYY')
 
@@ -26,19 +27,18 @@ function getWordofDay() {
   headingForResult.textContent = "";
   displayContainer.textContent = "";
   // TODO: Fetch random word form random word API
-  fetch("https://wordsapiv1.p.rapidapi.com/words/?random=true", {
+  fetch("https://random-word-api.herokuapp.com/word?number=10&swear=0", {
     method: "GET",
-    headers: {
-      "x-rapidapi-host": "wordsapiv1.p.rapidapi.com",
-      "x-rapidapi-key": "56e1ec2b89msh75f5a1bd9fbcbb6p150a7bjsnb6e951a5a987",
-    },
+
   })
     .then(function (response) {
       return response.json();
     }) // Convert data to json
     .then(function (data) {
+      console.log(data)
+
       // Sets the word of the day to the DOM
-      var randomWord = data.word;
+      var randomWord = data[0];
       chosenWord.textContent = ('" ' + randomWord + ' "');
       chosenWord.setAttribute("data-word", randomWord);
 
@@ -60,8 +60,6 @@ function decision() {
     similar(passedInWord);
   } else if (selected == "defintion") {
     defintion(passedInWord);
-    // TODO: else if: there are no similar words, display that
-    // TODO: clear the defintion/similar words upon displaying a new word of the day
   }
 } //end of decision function
 
@@ -84,7 +82,7 @@ function similar(rword) {
     .then(function (data) {
       var similarOne = data[0];
       headingForResult.textContent = "Similar Words";
-      displayResult(similarOne);
+      similarContainer.textContent = similarOne;
     })
     .catch((error) => console.log("error", error)); // CHANGE FORM LOG TO DISPLAY ON PAGE AND OR LOG
 } //End of Thesarus Function
@@ -124,7 +122,6 @@ function defintion(rword) {
 } //end of Dictionary Function
 
 // Get from local storage and display to the table in the html framework
-// // TODO: FIX THIS!!! -Emma
 function getWords() {
   var words = localStorage.getItem("words");
   words = JSON.parse(words);
@@ -139,5 +136,3 @@ getWordofDay ();
 
 selectButton.addEventListener("click", decision);
 // wordOfTheDayBtn.addEventListener("click", );
-
-
