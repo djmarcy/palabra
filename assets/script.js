@@ -39,7 +39,7 @@ function getWordofDay() {
     .then(function (data) {
       // Sets the word of the day to the DOM
       var randomWord = data.word;
-      chosenWord.textContent = randomWord;
+      chosenWord.textContent = ('" ' + randomWord + ' "');
       chosenWord.setAttribute("data-word", randomWord);
 
       // Sets word of the day to local storage
