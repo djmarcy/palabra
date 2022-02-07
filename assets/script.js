@@ -65,6 +65,7 @@ function decision() {
 
 // THIS FUNCTION PINGS THE THESAURUS
 function similar(rword) {
+  displayContainer.textContent = ""
   var word = rword;
   var key = "ca17d58e-66c7-41a6-a5c6-589cfe4e0342";
   var requestOptions = {
@@ -80,9 +81,10 @@ function similar(rword) {
   )
     .then((response) => response.json())
     .then(function (data) {
+      console.log(data)
       var similarOne = data[0];
       headingForResult.textContent = "Similar Words";
-      similarContainer.textContent = similarOne;
+      displayContainer.textContent = similarOne;
     })
     .catch((error) => console.log("error", error)); // CHANGE FORM LOG TO DISPLAY ON PAGE AND OR LOG
 } //End of Thesarus Function
