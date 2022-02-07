@@ -76,8 +76,8 @@ function similar(rword) {
     "https://www.dictionaryapi.com/api/v3/references/thesaurus/json/" +
       rword +
       "?key=" +
-      key,
-    requestOptions
+      key
+    // requestOptions
   )
     .then((response) => response.json())
     .then(function (data) {
@@ -91,7 +91,11 @@ function similar(rword) {
 
 // THIS FUNCTION PINGS THE DICTIONARY
 function defintion(rword) {
-  var word = rword;
+
+    var words = localStorage.getItem("words");
+    words = JSON.parse(words);
+
+  var words = rword;
   var requestOptions = {
     method: "GET",
     redirect: "follow",
@@ -99,13 +103,13 @@ function defintion(rword) {
 
   fetch(
     "https://www.dictionaryapi.com/api/v3/references/collegiate/json/" +
-      word +
+      words +
       "?key=579eae0a-3a35-44ce-b657-5006082e2ec0",
     requestOptions
   )
     .then((response) => response.json())
     .then(function (data) {
-      console.log(data);
+
       if (data.length < 3) {
         var shortdef = data[0].shortdef[0];
         if (shortdef === null) {
