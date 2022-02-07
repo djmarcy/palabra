@@ -1,32 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap"
+      rel="stylesheet"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@600&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/style.css" />
     <title>Palabra: Expand your vocabulary!</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1 class="text-8xl">Palabra</h1>
-        <h2 class="text-2xl" id="fun-way">✨ An easy way to learn one word a day ✨</h2>
-
+      <div>
+        <h1 class="text-4xl text-left">Palabra</h1>
+        
+    </div>
     </header>
 
-    <section class="max-w-7xl gap-2 mx-auto flex flex-row my-4 items-center">
+    <section class="max-w-10xl gap-2 mx-auto flex flex-row my-4 items-center">
         <article class="w-full">
-            <button id="word-of-day">Word of the Day:</button>
+            <h3 class="text-6xl" id="word-of-day">Word of the Day:</h3>
             <h3 class="text-4xl" id="chosen-word"></h3>
             <p id="definition"></p>
             <p id="displayContainer"></p>
@@ -44,6 +55,8 @@
 
     <section class="my-4 word-container">
 
+        <h3 class="text-4xl text-center" id="past-words">Past Words:</h3>
+
         <div class="saved-section">
 
             <div class="word-container">
@@ -57,7 +70,7 @@
     <div class="spacer"></div>
 
     <footer>
-        <p>Made by the Elder Millenials</p>
+        <p>Made by Jacob, Dylan & Emma</p>
     </footer>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./assets/script.js"></script>

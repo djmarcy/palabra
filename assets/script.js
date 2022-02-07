@@ -58,6 +58,8 @@ function decision() {
     similar(passedInWord);
   } else if (selected == "defintion") {
     defintion(passedInWord);
+    // TODO: else if: there are no similar words, display that
+    // TODO: clear the defintion/similar words upon displaying a new word of the day
   }
 } //end of decision function
 
@@ -134,5 +136,7 @@ function getWords() {
   }
 }
 
+getWordofDay ();
+
 selectButton.addEventListener("click", decision);
-wordOfTheDayBtn.addEventListener("click", getWordofDay);
+// wordOfTheDayBtn.addEventListener("click", );

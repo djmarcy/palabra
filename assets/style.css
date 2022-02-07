@@ -1,8 +1,9 @@
 :root {
-  --light: #f3dfa2;
-  --teal: #bb4430;
+  --light: #e6e2d3;
+  --teal: #b9936c;
   --dark: #231f20;
-  --lime: #7ebdc2;
+  --lime: #dac292;
+  --beige: #c4b7a6;
 }
 
 * {
@@ -11,7 +12,7 @@
 }
 
 h1 {
-  font-family: "Lobster", cursive;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
   font-size: 90px;
   color: var(--teal);
 }
@@ -41,7 +42,7 @@ body {
 
 header {
   margin: 0;
-  padding: 30px;
+  padding: 10px;
   text-align: center;
   background-color: var(--lime);
   color: var(--lime);
@@ -51,7 +52,7 @@ footer {
   background: var(--lime);
   color: var(--teal);
   text-align: center;
-  padding: 30px;
+  padding: 10px;
   font-size: 20px;
   font-weight: bold;
   width: 100%;
@@ -65,17 +66,24 @@ button {
 }
 
 #lang-select {
-  font-size: 30px;
-  background-color: #f3dfa2;
+  font-size: 20px;
+  background-color: var(--beige);
+  padding: 8px;
+  margin-left: 30px;
 }
 
 #select-button {
   font-size: 30px;
   color: var(--light);
   background-color: var(--teal);
-  font-family: "Lobster", cursive;
-  padding: 8px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  padding-right: 20px;
+  padding-left: 20px;
   font-size: 30px;
+}
+
+#select-button:hover {
+  background-color: var(--lime);
 }
 
 #chosen-word {
@@ -84,16 +92,21 @@ button {
 
 .my-4 {
   color: var(--dark);
+  padding-top: auto;
 }
 
 .saved-section {
-  margin-top: 125px;
+  margin-top: auto;
 }
+
 .word-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  display: block;
   text-align: center;
+  font-size: 25px;
+}
+
+#past-words {
+  margin-top: 70px;
 }
 
 .column {
@@ -105,18 +118,18 @@ button {
 }
 
 #fun-way {
-  color: var(--teal);
+  color: var(--dark);
+  margin-bottom: 25px;
 }
 
 #word-of-day {
-  font-size: 30px;
-  color: var(--light);
-  background-color: var(--teal);
-  font-family: "Lobster", cursive;
+  font-size: 50px;
+  color: var(--teal);
+  font-family: 'Yanone Kaffeesatz', sans-serif;
   padding: 8px;
-  font-size: 30px;
 }
 
 .spacer {
   flex-grow: 1;
 }
+
