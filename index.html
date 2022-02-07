@@ -8,21 +8,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
       href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap"
       rel="stylesheet"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@600&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./assets/style.css" />
     <title>Palabra: Expand your vocabulary!</title>
   </head>
@@ -31,49 +28,51 @@
     <header>
       <div>
         <h1 class="text-4xl text-left">Palabra</h1>
-        
-    </div>
+      </div>
     </header>
 
-    <section class="max-w-10xl gap-2 mx-auto flex flex-row my-4 items-center">
-        <article class="w-full">
-            <h3 class="text-6xl" id="word-of-day">Word of the Day:</h3>
-            <h3 class="text-4xl" id="chosen-word"></h3>
-            <p id="definition"></p>
-            <p id="displayContainer"></p>
-        </article>
+    <section class="max-w-10xl text-center" id="top">
+      <article class="w-full">
+        <h3 class="text-6xl" id="word-of-day">Word of the Day: <span id="date"></span></h3>
+        <h3 class="text-4xl" id="chosen-word"></h3>
+        <p id="definition"></p>
+        <p id="displayContainer"></p>
+      </article>
 
-        <article class="w-full" id="input-dropwdown">
-            <select name="language-select" id="lang-select">
-                <option value="similar-words" class="dropdown" id="similarWords" selected>Similar Words</option>
-                <option value="defintion" class="dropdown" id="definition">Definition</option>
-            </select>
-            <br />
-            <button id="select-button">Go!</button>
-        </article>
+      <article class="w-full text-center" id="input-dropwdown">
+        <select name="language-select" id="lang-select">
+          <option
+            value="similar-words"
+            class="dropdown"
+            id="similarWords"
+            selected
+          >
+            Similar Words
+          </option>
+          <option value="defintion" class="dropdown" id="definition">
+            Definition
+          </option>
+        </select>
+        <br />
+        <button id="select-button">Go!</button>
+      </article>
     </section>
 
     <section class="my-4 word-container">
+      <h3 class="text-4xl text-center" id="past-words">Past Words:</h3>
 
-        <h3 class="text-4xl text-center" id="past-words">Past Words:</h3>
-
-        <div class="saved-section">
-
-            <div class="word-container">
-
-            </div>
-
-        </div>
-
+      <div class="saved-section">
+        <div class="word-container"></div>
+      </div>
     </section>
 
     <div class="spacer"></div>
 
     <footer>
-        <p>Made by Jacob, Dylan & Emma</p>
+      <p>Made by Jacob, Dylan & Emma</p>
     </footer>
+    <script src="https://momentjs.com/downloads/moment.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./assets/script.js"></script>
-</body>
-
+  </body>
 </html>

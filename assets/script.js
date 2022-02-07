@@ -14,6 +14,8 @@ var wordContainer = document.querySelector(".word-container");
 var headingForResult = document.getElementById("definition");
 var displayContainer = document.getElementById("displayContainer");
 
+document.getElementById("date").textContent = moment().format('MMMM Do YYYY')
+
 // TODO: Assign other variables
 var storedWords = [];
 
@@ -81,7 +83,7 @@ function similar(rword) {
     .then((response) => response.json())
     .then(function (data) {
       var similarOne = data[0];
-      headingForResult.textContent = "Similar word:";
+      headingForResult.textContent = "Similar Words";
       displayResult(similarOne);
     })
     .catch((error) => console.log("error", error)); // CHANGE FORM LOG TO DISPLAY ON PAGE AND OR LOG
@@ -109,12 +111,12 @@ function defintion(rword) {
         if (shortdef === null) {
           shortdef = data[1].shoftdef[0];
         } else {
-          headingForResult.textContent = "Definition:";
+          headingForResult.textContent = "What It Means";
           displayContainer.textContent = shortdef;
         }
       } else {
         var oneWorder = data[0];
-        headingForResult.textContent = "Definition:";
+        headingForResult.textContent = "What It Means";
         displayContainer.textContent = oneWorder;
       }
     });
@@ -140,3 +142,5 @@ getWordofDay ();
 
 selectButton.addEventListener("click", decision);
 // wordOfTheDayBtn.addEventListener("click", );
+
+

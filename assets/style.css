@@ -13,7 +13,6 @@
 
 h1 {
   font-family: 'Yanone Kaffeesatz', sans-serif;
-  font-size: 90px;
   color: var(--teal);
 }
 
@@ -27,6 +26,7 @@ h2 {
   align-items: center;
   color: var(--dark);
   background-color: var(--light);
+  margin-top: 100px;
 }
 
 body {
@@ -58,6 +58,10 @@ footer {
   width: 100%;
 }
 
+#top {
+  margin-top: 25px;
+}
+
 button {
   padding: 15px 5px;
   background-color: var(--light);
@@ -69,7 +73,6 @@ button {
   font-size: 20px;
   background-color: var(--beige);
   padding: 8px;
-  margin-left: 30px;
 }
 
 #select-button {
@@ -88,11 +91,17 @@ button {
 
 #chosen-word {
   color: var(--dark);
+  margin: 10px;
+  font-family: 'Playfair Display', serif;
 }
 
 .my-4 {
   color: var(--dark);
   padding-top: auto;
+}
+
+#definition {
+  font-size: 25px;
 }
 
 .saved-section {
@@ -122,7 +131,7 @@ button {
   margin-bottom: 25px;
 }
 
-#word-of-day {
+#word-of-day, #date {
   font-size: 50px;
   color: var(--teal);
   font-family: 'Yanone Kaffeesatz', sans-serif;
