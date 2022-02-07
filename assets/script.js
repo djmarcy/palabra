@@ -128,14 +128,11 @@ function defintion(rword) {
 function getWords() {
   var words = localStorage.getItem("words");
   words = JSON.parse(words);
-  console.log(words);
 
-  for (let i = 0; i < words.length; i++) {
-    var word = words[i];
-    var wordDiv = document.createElement("div");
-    wordDiv.textContent = word;
-    wordContainer.appendChild(wordDiv);
-  }
+  var wordDiv = document.createElement("div");
+  wordDiv.textContent = words;
+  wordContainer.appendChild(wordDiv);
+
 }
 
 getWordofDay ();
