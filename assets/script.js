@@ -87,7 +87,7 @@ function similar(rword) {
       headingForResult.textContent = "Similar Words";
       displayContainer.textContent = similarOne;
 
-      if (similarOne == undefined) {
+      if (typeof (data[0].meta.syns === "undefined")) {
         displayContainer.textContent = "No similar words."
       }
     })
