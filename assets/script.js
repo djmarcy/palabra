@@ -76,26 +76,27 @@ function similar(rword) {
     "https://www.dictionaryapi.com/api/v3/references/thesaurus/json/" +
       rword +
       "?key=" +
-      key
-    // requestOptions
+      key,
+    requestOptions
   )
     .then((response) => response.json())
     .then(function (data) {
       console.log(data)
-      var similarOne = data[0];
+      var similarOne = data[0].meta.syns;
+
       headingForResult.textContent = "Similar Words";
       displayContainer.textContent = similarOne;
+
+      if (similarOne == undefined) {
+        displayContainer.textContent = "No similar words."
+      }
     })
     .catch((error) => console.log("error", error)); // CHANGE FORM LOG TO DISPLAY ON PAGE AND OR LOG
 } //End of Thesarus Function
 
 // THIS FUNCTION PINGS THE DICTIONARY
 function defintion(rword) {
-
-    var words = localStorage.getItem("words");
-    words = JSON.parse(words);
-
-  var words = rword;
+  var word = rword;
   var requestOptions = {
     method: "GET",
     redirect: "follow",
@@ -103,13 +104,13 @@ function defintion(rword) {
 
   fetch(
     "https://www.dictionaryapi.com/api/v3/references/collegiate/json/" +
-      words +
+      word +
       "?key=579eae0a-3a35-44ce-b657-5006082e2ec0",
     requestOptions
   )
     .then((response) => response.json())
     .then(function (data) {
-
+      console.log(data);
       if (data.length < 3) {
         var shortdef = data[0].shortdef[0];
         if (shortdef === null) {
