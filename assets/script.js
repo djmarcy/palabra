@@ -82,9 +82,14 @@ function similar(rword) {
     .then((response) => response.json())
     .then(function (data) {
       console.log(data)
-      var similarOne = data[0];
+      var similarOne = data[0].meta.syns;
+
       headingForResult.textContent = "Similar Words";
       displayContainer.textContent = similarOne;
+
+      if (similarOne == undefined) {
+        displayContainer.textContent = "No similar words."
+      }
     })
     .catch((error) => console.log("error", error)); // CHANGE FORM LOG TO DISPLAY ON PAGE AND OR LOG
 } //End of Thesarus Function
