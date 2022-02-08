@@ -13,7 +13,7 @@
 
 h1 {
   font-family: 'Yanone Kaffeesatz', sans-serif;
-  color: var(--teal);
+  color: var(--light);
 }
 
 h2 {
@@ -45,7 +45,7 @@ header {
   padding: 10px;
   text-align: center;
   background-color: var(--lime);
-  color: var(--lime);
+  color: var(--light);
 }
 
 footer {
