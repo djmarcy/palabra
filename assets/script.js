@@ -71,19 +71,19 @@ function similar(rword) {
     )
     .then((response) => response.json())
     .then(function (data) {
-      if (data.length <= 9) {
-        var similarOne = data[0].meta.syns[0];
-        if (similarOne === null) {
-          similarOne = data[1].meta.syns;
-        } else {
-          headingForResult.textContent = "Similar Words";
-          displayContainer.textContent = similarOne;
-        }
+      // if statement to evaluate data - else if it is a string already
+      if ((typeof(data[0])) != (typeof("string"))) {
+        var similarOne = data[0].meta.syns[0][0];
+        var similarTwo = data[0].meta.syns[0][1];
+        var similarThree = data[0].meta.syns[0][2];
+        headingForResult.textContent = "What It Means";
+        displayContainer.textContent = (`${similarOne}, ${similarTwo}, ${similarThree}`);
       } else {
         var oneWorder = data[0];
         var wordTwo = data[1];
+        var wordThree = data[2];
         headingForResult.textContent = "Similar Words";
-        displayContainer.textContent = (`${oneWorder},  ${wordTwo}`);
+        displayContainer.textContent = (`${oneWorder},  ${wordTwo}, ${wordThree}`);
       }
     })
     .catch((error) => console.log("error", error));
@@ -97,7 +97,6 @@ function defintion(rword) {
     method: "GET",
     redirect: "follow",
   };
-
   fetch(
     "https://www.dictionaryapi.com/api/v3/references/collegiate/json/" +
       word +
@@ -106,8 +105,7 @@ function defintion(rword) {
   )
     .then((response) => response.json())
     .then(function (data) {
-      console.log(data);
-      // if statement to evaluate data[0] to see what the output was - if array of strings do first block - if we get more "meta type" data run second block
+      // if statement to evaluate data if string then else
       if ((typeof(data[0])) != (typeof("string"))) {
         var gotMeta = data[0].shortdef[0];
         headingForResult.textContent = "What It Means";
@@ -132,6 +130,7 @@ function getWords() {
 
 }
 
+// call function on page load
 getWordofDay ();
-
+// event listener for go button
 selectButton.addEventListener("click", decision);
