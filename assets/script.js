@@ -106,16 +106,23 @@ function defintion(rword) {
   )
     .then((response) => response.json())
     .then(function (data) {
+      console.log(`inside of then promise`);
+      console.log(data);
       if (data.length < 9) {
         var shortdef = data[0].shortdef[0];
-        if (shortdef === null) {
+        if (shortdef === null) { //can remove this if
           shortdef = data[0].shoftdef[1];
+          console.log(shortdef);
         } else {
           headingForResult.textContent = "What It Means";
           displayContainer.textContent = shortdef;
         }
       } else {
-        var oneWorder = data[0];
+        if ((typeof(data[0])) != (typeof("string"))) {
+          var oneWorder = data[0].shortdef[0];
+        } else {
+          var oneWorder = data[0];
+        }
         headingForResult.textContent = "What It Means";
         displayContainer.textContent = oneWorder;
       }
