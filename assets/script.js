@@ -35,8 +35,6 @@ function getWordofDay() {
       return response.json();
     }) // Convert data to json
     .then(function (data) {
-      console.log(data)
-
       // Sets the word of the day to the DOM
       var randomWord = data[0];
       chosenWord.textContent = ('" ' + randomWord + ' "');
@@ -82,7 +80,6 @@ function similar(rword) {
     )
     .then((response) => response.json())
     .then(function (data) {
-      console.log(data)
       headingForResult.textContent = "Similar Words";
       if (data.length <= 3) {
         var similarOne = data[0].meta.syns;
@@ -99,7 +96,7 @@ function similar(rword) {
         displayContainer.textContent = (`${oneWorder},  ${wordTwo}`);
       }
     })
-    .catch((error) => console.log("error", error)); // CHANGE FORM LOG TO DISPLAY ON PAGE AND OR LOG
+    .catch((error) => console.log("error", error));
 } //End of Thesarus Function
 
 
@@ -119,7 +116,6 @@ function defintion(rword) {
   )
     .then((response) => response.json())
     .then(function (data) {
-      console.log(data);
       if (data.length < 3) {
         var shortdef = data[0].shortdef[0];
         if (shortdef === null) {
@@ -133,8 +129,8 @@ function defintion(rword) {
         headingForResult.textContent = "What It Means";
         displayContainer.textContent = oneWorder;
       }
-    });
-  // .catch(error => console.log('error', error));
+    })
+  .catch(error => console.log('error', error));
 } //end of Dictionary Function
 
 // Get from local storage and display to the table in the html framework
@@ -151,4 +147,3 @@ function getWords() {
 getWordofDay ();
 
 selectButton.addEventListener("click", decision);
-// wordOfTheDayBtn.addEventListener("click", );
