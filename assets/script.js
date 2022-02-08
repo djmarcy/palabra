@@ -70,16 +70,18 @@ function similar(rword) {
   words = JSON.parse(words);
   rword = words
   var key = "ca17d58e-66c7-41a6-a5c6-589cfe4e0342";
-  // var requestOptions = {
-  //   method: "GET",
-  //   redirect: "follow",
+  var requestOptions = {
+    method: "GET",
+    redirect: "follow",
+  }
+  
   fetch(
     "https://www.dictionaryapi.com/api/v3/references/thesaurus/json/" +
       rword +
       "?key=" +
       key,
-    // requestOptions
-  )
+    requestOptions
+    )
     .then((response) => response.json())
     .then(function (data) {
       console.log(data)
