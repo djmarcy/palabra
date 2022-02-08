@@ -70,16 +70,18 @@ function similar(rword) {
   words = JSON.parse(words);
   rword = words
   var key = "ca17d58e-66c7-41a6-a5c6-589cfe4e0342";
-  // var requestOptions = {
-  //   method: "GET",
-  //   redirect: "follow",
+  var requestOptions = {
+    method: "GET",
+    redirect: "follow",
+  }
+
   fetch(
     "https://www.dictionaryapi.com/api/v3/references/thesaurus/json/" +
       rword +
       "?key=" +
       key,
-    // requestOptions
-  )
+    requestOptions
+    )
     .then((response) => response.json())
     .then(function (data) {
       console.log(data)
@@ -117,7 +119,7 @@ function defintion(rword) {
       if (data.length < 3) {
         var shortdef = data[0].shortdef[0];
         if (shortdef === null) {
-          shortdef = data[1].shoftdef[0];
+          shortdef = data[0].shoftdef[1];
         } else {
           headingForResult.textContent = "What It Means";
           displayContainer.textContent = shortdef;
