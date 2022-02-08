@@ -87,6 +87,8 @@ function similar(rword) {
       console.log(data)
       headingForResult.textContent = "Similar Words";
 
+      
+
       var similarOne = data[0].meta.syns;
 
       displayContainer.textContent = similarOne;
