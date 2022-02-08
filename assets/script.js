@@ -74,7 +74,7 @@ function similar(rword) {
     method: "GET",
     redirect: "follow",
   }
-  
+
   fetch(
     "https://www.dictionaryapi.com/api/v3/references/thesaurus/json/" +
       rword +
@@ -119,7 +119,7 @@ function defintion(rword) {
       if (data.length < 3) {
         var shortdef = data[0].shortdef[0];
         if (shortdef === null) {
-          shortdef = data[1].shoftdef[0];
+          shortdef = data[0].shoftdef[1];
         } else {
           headingForResult.textContent = "What It Means";
           displayContainer.textContent = shortdef;
