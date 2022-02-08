@@ -106,24 +106,16 @@ function defintion(rword) {
   )
     .then((response) => response.json())
     .then(function (data) {
-      if (data.length < 9) {
-        var shortdef = data[0].shortdef[0];
-        if (shortdef === null) { //can remove this if
-          shortdef = data[0].shoftdef[1];
-          console.log(shortdef);
-        } else {
-          headingForResult.textContent = "What It Means";
-          displayContainer.textContent = shortdef;
-        }
-      } else {
-        if ((typeof(data[0])) != (typeof("string"))) {
-          var oneWorder = data[0].shortdef[0];
-        } else {
-          var oneWorder = data[0];
-        }
+      console.log(data);
+      // if statement to evaluate data[0] to see what the output was - if array of strings do first block - if we get more "meta type" data run second block
+      if ((typeof(data[0])) != (typeof("string"))) {
+        var gotMeta = data[0].shortdef[0];
         headingForResult.textContent = "What It Means";
-        displayContainer.textContent = oneWorder;
-        console.log(`oneWroder ${oneWorder}`)
+        displayContainer.textContent = gotMeta;
+      } else {
+        var gotNice = data[0];
+        headingForResult.textContent = "What It Means";
+        displayContainer.textContent = gotNice;
       }
     })
   .catch(error => console.log('error', error));
