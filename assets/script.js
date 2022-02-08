@@ -51,9 +51,7 @@ function getWordofDay() {
 
 // function to call the appropriate function based on user choice
 function decision() {
-  var passedInWord = document
-    .getElementById("chosen-word")
-    .getAttribute("data-word");
+  var passedInWord = document.getElementById("chosen-word").getAttribute("data-word");
   var ddl = document.getElementById("lang-select");
   var selected = ddl.value;
   if (selected == "similar-words") {
