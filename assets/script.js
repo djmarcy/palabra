@@ -106,8 +106,6 @@ function defintion(rword) {
   )
     .then((response) => response.json())
     .then(function (data) {
-      console.log(`inside of then promise`);
-      console.log(data);
       if (data.length < 9) {
         var shortdef = data[0].shortdef[0];
         if (shortdef === null) { //can remove this if
@@ -125,6 +123,7 @@ function defintion(rword) {
         }
         headingForResult.textContent = "What It Means";
         displayContainer.textContent = oneWorder;
+        console.log(`oneWroder ${oneWorder}`)
       }
     })
   .catch(error => console.log('error', error));
