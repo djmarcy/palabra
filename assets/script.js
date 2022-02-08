@@ -81,14 +81,17 @@ function similar(rword) {
   )
     .then((response) => response.json())
     .then(function (data) {
+      headingForResult.textContent = "Similar Words";
+
       console.log(data)
       var similarOne = data[0].meta.syns;
 
-      headingForResult.textContent = "Similar Words";
-      displayContainer.textContent = similarOne;
+      if (typeof (similarOne === "undefined")) {
+      displayContainer.textContent = "No similar words."
+      }
 
-      if (typeof (data[0].meta.syns === "undefined")) {
-        displayContainer.textContent = "No similar words."
+      else { 
+        displayContainer.textContent = similarOne;
       }
     })
     .catch((error) => console.log("error", error)); // CHANGE FORM LOG TO DISPLAY ON PAGE AND OR LOG
