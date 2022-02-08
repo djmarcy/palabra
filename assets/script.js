@@ -1,11 +1,3 @@
-// WHEN, the page loads
-// THEN, I am presented with all of the words I have learned so far
-// GIVEN, I am presented with a page with a drop down to choose a language
-// WHEN, I choose an option from the drop down box and press the Go button
-// THEN, the application displays a word in english and similar words or a defintion
-// WHEN, I have generated a new word,
-// THEN, The words I have previously learned will display on the page
-
 // TODO: Assign variables from the DOM
 var chosenWord = document.getElementById("chosen-word");
 var wordOfTheDayBtn = document.getElementById("word-of-day");
@@ -15,6 +7,7 @@ var headingForResult = document.getElementById("definition");
 var displayContainer = document.getElementById("displayContainer");
 var similarContainer = document.getElementById("similar-container")
 
+// Date at the top of the page
 document.getElementById("date").textContent = moment().format('MMMM Do YYYY')
 
 // TODO: Assign other variables
@@ -52,6 +45,7 @@ function decision() {
   var passedInWord = document.getElementById("chosen-word").getAttribute("data-word");
   var ddl = document.getElementById("lang-select");
   var selected = ddl.value;
+  // if statement to evaluate data attribute
   if (selected == "similar-words") {
     similar(passedInWord);
   } else if (selected == "defintion") {
@@ -61,16 +55,13 @@ function decision() {
 
 // THIS FUNCTION PINGS THE THESAURUS
 function similar(rword) {
-  displayContainer.textContent = ""
-  var words = localStorage.getItem("words");
-  words = JSON.parse(words);
-  rword = words
+  // clear previous data
+  displayContainer.textContent = "";
   var key = "ca17d58e-66c7-41a6-a5c6-589cfe4e0342";
   var requestOptions = {
     method: "GET",
     redirect: "follow",
   }
-
   fetch(
     "https://www.dictionaryapi.com/api/v3/references/thesaurus/json/" +
       rword +
@@ -80,9 +71,8 @@ function similar(rword) {
     )
     .then((response) => response.json())
     .then(function (data) {
-      headingForResult.textContent = "Similar Words";
       if (data.length <= 9) {
-        var similarOne = data[0].meta.syns;
+        var similarOne = data[0].meta.syns[0];
         if (similarOne === null) {
           similarOne = data[1].meta.syns;
         } else {
@@ -124,8 +114,11 @@ function defintion(rword) {
         } else {
           headingForResult.textContent = "What It Means";
           displayContainer.textContent = shortdef;
+<<<<<<< HEAD
           console.log(`shortdef ${shortdef}`)
           // debugger
+=======
+>>>>>>> aa5a0fe1e9ea25078ebe9ce47033225a7e0065d0
         }
       } else {
         var oneWorder = data[0];
