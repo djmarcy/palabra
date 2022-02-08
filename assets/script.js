@@ -81,7 +81,7 @@ function similar(rword) {
     .then((response) => response.json())
     .then(function (data) {
       headingForResult.textContent = "Similar Words";
-      if (data.length <= 3) {
+      if (data.length <= 9) {
         var similarOne = data[0].meta.syns;
         if (similarOne === null) {
           similarOne = data[1].meta.syns;
@@ -116,13 +116,14 @@ function defintion(rword) {
   )
     .then((response) => response.json())
     .then(function (data) {
-      if (data.length < 3) {
+      if (data.length < 9) {
         var shortdef = data[0].shortdef[0];
         if (shortdef === null) {
           shortdef = data[0].shoftdef[1];
         } else {
           headingForResult.textContent = "What It Means";
           displayContainer.textContent = shortdef;
+          // debugger
         }
       } else {
         var oneWorder = data[0];
