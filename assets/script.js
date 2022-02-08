@@ -84,16 +84,20 @@ function similar(rword) {
     .then(function (data) {
       console.log(data)
       headingForResult.textContent = "Similar Words";
-
-      
-
-      var similarOne = data[0].meta.syns;
-
-      displayContainer.textContent = similarOne;
-
-      // if (typeof (similarOne == "undefined")) {
-      // displayContainer.textContent = "No similar words."
-      // }
+      if (data.length <= 3) {
+        var similarOne = data[0].meta.syns;
+        if (similarOne === null) {
+          similarOne = data[1].meta.syns;
+        } else {
+          headingForResult.textContent = "Similar Words";
+          displayContainer.textContent = similarOne;
+        }
+      } else {
+        var oneWorder = data[0];
+        var wordTwo = data[1];
+        headingForResult.textContent = "Similar Words";
+        displayContainer.textContent = (`${oneWorder},  ${wordTwo}`);
+      }
     })
     .catch((error) => console.log("error", error)); // CHANGE FORM LOG TO DISPLAY ON PAGE AND OR LOG
 } //End of Thesarus Function
