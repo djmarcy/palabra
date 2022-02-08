@@ -66,36 +66,36 @@ function decision() {
 // THIS FUNCTION PINGS THE THESAURUS
 function similar(rword) {
   displayContainer.textContent = ""
-  var word = rword;
+  var words = localStorage.getItem("words");
+  words = JSON.parse(words);
+  rword = words
   var key = "ca17d58e-66c7-41a6-a5c6-589cfe4e0342";
-  var requestOptions = {
-    method: "GET",
-    redirect: "follow",
-  };
+  // var requestOptions = {
+  //   method: "GET",
+  //   redirect: "follow",
   fetch(
     "https://www.dictionaryapi.com/api/v3/references/thesaurus/json/" +
       rword +
       "?key=" +
       key,
-    requestOptions
+    // requestOptions
   )
     .then((response) => response.json())
     .then(function (data) {
+      console.log(data)
       headingForResult.textContent = "Similar Words";
 
-      console.log(data)
       var similarOne = data[0].meta.syns;
 
-      if (typeof (similarOne === "undefined")) {
-      displayContainer.textContent = "No similar words."
-      }
+      displayContainer.textContent = similarOne;
 
-      else { 
-        displayContainer.textContent = similarOne;
-      }
+      // if (typeof (similarOne == "undefined")) {
+      // displayContainer.textContent = "No similar words."
+      // }
     })
     .catch((error) => console.log("error", error)); // CHANGE FORM LOG TO DISPLAY ON PAGE AND OR LOG
 } //End of Thesarus Function
+
 
 // THIS FUNCTION PINGS THE DICTIONARY
 function defintion(rword) {
