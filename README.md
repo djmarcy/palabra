@@ -12,22 +12,9 @@ THEN, the application displays a word in english and the chosen language, as wel
 WHEN, I have generated a new word,
 THEN, The words I have previously learned will display on the page
 
-## MVP
-- Aesethetically pleasing, minimilist theme
-- Header
-- Drop-down to choose language (user input)
-- Button to generate word/initiate init function
-- Keyboard event (initiate function on enter release)
-- Random word generated from an API
-- Convert to chosen language using different API
-- Display words on page
-- Data saved to storage 
-- Get data from storage to display on page 
-- Use momentjs to display dates
 
-## Extras
-- Pronunciation button
-- PIZAZZ
-- A picture of a chupacabra
-- Test your knowledge 
-- Linking the past words
+![Palabra on page Load](./assets/images/onLoad.PNG)
+![Palabra with similar words](./assets/images/similar.PNG)
+![Palabra with definition](./assets/images/definition.PNG)
+![Mobile Palabra with similar words](./assets/images/mobileSimilar.jpg)
+![Mobile Palabra with definition](./assets/images/mobileDefinition.jpg)
