@@ -72,6 +72,7 @@ function similar(rword) {
   )
     .then((response) => response.json())
     .then(function (data) {
+      console.log(data);
       // if statement to evaluate data - else if it is a string already
       if (typeof data[0] != typeof "string") {
         var similarOne = data[0].meta.syns[0][0];
