@@ -46,6 +46,8 @@ header {
   text-align: center;
   background-color: var(--lime);
   color: var(--light);
+  display: flex;
+  justify-content: space-between;
 }
 
 footer {
@@ -141,3 +143,11 @@ button {
   flex-grow: 1;
 }
 
+.video-container {
+  width: 66%;
+  margin: 0 auto;
+}
+
+iframe {
+  margin: 15px 0px 45px;
+}
