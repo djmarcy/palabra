@@ -16,6 +16,15 @@ h1 {
   color: var(--light);
 }
 
+#palabra {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  color: var(--light);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
 h2 {
   color: var(--teal);
 }
