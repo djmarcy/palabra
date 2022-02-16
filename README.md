@@ -12,7 +12,14 @@ THEN, the application displays a word in english and the chosen language, as wel
 WHEN, I have generated a new word,
 THEN, The words I have previously learned will display on the page
 
+## Uses
+The application can be used to expand ones vocabulary. You can learn a new word each day and choose to have that word defined or learn similar words from the drop-down menu.
 
+## Deployed app
+The deployed application can be found here: https://djmarcy.github.io/palabra/
+
+## Screenshots
+Here are pictures that show the functionality of the application:
 ![Palabra on page Load](./assets/images/onLoad.PNG)
 ![Palabra with similar words](./assets/images/similar.PNG)
 ![Palabra with definition](./assets/images/definition.PNG)
